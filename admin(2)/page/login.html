@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录界面</title>
+	</head>
+	<link rel="stylesheet" href="../css/login.css" />
+	<link rel="stylesheet" href="../css/layui.css" />
+	<script type="text/javascript" src="../js/login.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+	<script src="../js/adress.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+
+
+	
+		<div class="layui-container">
+			<div class="main layui-row">
+			<body class="bj2">
+				<div>
+					<img src="../image/jianying.png" class="top layui-fluid" id="toppic"/>
+				</div>
+			
+			
+			<div class="login" >
+		　　<form method="post" class="layui-fluid layui-form"  >	
+			<h1 class="layui-fluid">Login</h1>
+			<h4 class="layui-fluid">登录</h4>
+			<table>
+				<tr>
+					<td><p>username</p><span>用户名：</span></td>
+					<td><input type="text" name="id" id="id" placeholder="请输入登录id号" /></td>
+				</tr>
+				<tr>
+					<td><p>password</p><span>密　码&nbsp;&nbsp;&nbsp;：</span></td>
+					<td><input type="password" name="password" id="password" placeholder="请输入密码"/></td>
+				</tr>
+			</table>
+			<input type="button" class="btstyle" value="登录" onclick="onLoginClick()" />
+			</form>
+			</div>
+
+			</div>
+		</div>
+		<script>
+			function onLoginClick()
+			{
+				login(document.getElementById('id').value,document.getElementById('password').value);
+			};
+		
+		</script>
+	
+	</body>
+</html>

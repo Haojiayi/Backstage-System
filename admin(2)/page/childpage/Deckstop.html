@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../../js/jquery-1.8.3.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+		<script src="../../js/adress.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/Deckstop.js"></script>
+		<script src="../../layui/layui.js"></script>
+	<body>
+	<div class="layui-container">
+		<div class="layui-row">
+			<div class="layui-card layui-col-lg3">
+		<div class="layui-card-header">系统说明</div>
+		<div class="layui-card-body">本后台管理系统是为了实现食品从生产到加工到运输的监控，做为<span id="names"></span>,如果你有什么问题请查看使用手册。</div>
+		 	</div>
+		
+		<div class="layui-collapse layui-col-lg9" id="collroot">
+	
+		 	  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title" lay-accordion>公司名</h2>
+		    <div class="layui-colla-content" id="name">无</div>
+		  </div>
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">公司简介</h2>
+		    <div class="layui-colla-content" id="profile">无</div>
+		  </div>
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">生产许可证图</h2>
+		    <div class="layui-colla-content " id="pcPath">该用户未上传生产许可证图</div>
+		  </div>
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">安全许可证图</h2>
+		    <div class="layui-colla-content " id="scPath">该用户未上传安全许可证图</div>
+		  </div>
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">营业执照图</h2>
+		    <div class="layui-colla-content " id="blPath">该用户未上传公司营业执照图</div>
+		  </div>
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">公司地址</h2>
+		    <div class="layui-colla-content " id="address">该用户未上传公司地址</div>
+		  </div>
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title" >公司电话</h2>
+		    <div class="layui-colla-content " id="tel">该用户为上传公司电话</div>
+		  </div>
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">注册时间</h2>
+		    <div class="layui-colla-content " id="rTime">该用户未上传注册时间</div>
+		  </div>
+		</div>
+		
+		</div>
+		
+
+	</div>
+
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+		layui.use('element', function(){
+  			var element = layui.element;
+  			 //…
+				});
+			getcontent();
+		}
+
+	</script>
+</html>

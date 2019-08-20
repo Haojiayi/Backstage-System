@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<script src="../../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/add.css"/>
+	<script src="../../layui/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/adress.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/childpage/addbatch.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="../../layui/css/modules/layer/default/layer.css"/>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form id="form_staff" action="" method='post' enctype="multipart/form-data"><!--文件上传必须加enctype -->
+                                                                         
+			<div class="layui-form-item">
+			<span>
+				<label>操作商品名</label>
+				<input type="text" id="p_name" required="required" />
+			</span><br />
+			<span>
+				<label>批次数量</label>
+				<input type="text" id="amout" required="required" /></span><br />
+			<span>
+				<label>商品简介</label>
+				<input type="text" name="type" id="intro" value="" required="required"/></span><br />
+			<span>
+				<label>订单号</label>
+				<input type="text" name="type" id="man_id" value="" required="required"/></span><br />	
+  			<span>
+			<span>
+				<label>生产时间</label>
+				<input type="text" name="type" id="prodtime" value="" required="required"/></span><br />	
+  			<span>
+			<span>
+				<label>过期时间</label>
+				<input type="text" name="type" id="exptime" value="" required="required"/></span><br />	
+  			<span>
+			<span>
+	
+	  			<span><label>上传图片</label><input type="file" name="photo" id="photo" value="" class="" />	</span>	
+
+			</div>
+		      <button class="layui-btn layui-btn-lg" onclick="onclickadd()">立即提交</button>
+		</form>
+	</body>
+	<script type="text/javascript">
+//		window.onload=function show(){
+//			if(index==1){
+//				layer.closeAll('iframe')
+//			}
+//			showform();
+//			var index=1
+//		}
+		function onclickadd(){
+			var pro_img=document.getElementById("photo").files[0];
+			var prodtime=document.getElementById('prodtime').value
+			var p_name=document.getElementById('p_name').value
+			var exptime=document.getElementById('exptime').value
+			var intro=document.getElementById('intro').value
+			var man_id=document.getElementById('man_id').value
+			var amount=document.getElementById('amout').value
+			addbatch(pro_img,prodtime,p_name,exptime,intro,man_id,amount);
+		}
+	</script>
+</html>

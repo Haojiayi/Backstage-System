@@ -1,0 +1,10 @@
+.display-none{
+	display: none;
+}
+.display-block{
+	display: block;
+}
+.com-btn{
+	float: right;
+	background:red;
+}

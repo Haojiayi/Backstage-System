@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../../js/adress.js" ></script>
+		<script type="text/javascript" src="../../layui/layui.js"></script>
+		<script src="../../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/childpage/Storagemsg.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layui/layer.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/modules/layer/default/layer.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/staffmsg.css"/>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	
+		<button class="layui-btn-primary layui-btn" onclick="onaddstaff()">添加职员</button>
+		<button class="layui-btn-danger layui-btn" onclick="onclickstaff()" id="deletbtn">删除职员</button>
+		<input type="search" class="layui-input-block" placeholder="请输入您要查找的商品" id="searchpd" /> 
+		<button class="layui-btn layui-btn-radius" onclick="onclicksearch()">提交</button>
+		<button class="layui-btn com-btn" onclick="comfirdelet()" id="deletcomfir">确认删除</button>
+		<table class="layui-table">
+		  <colgroup>
+		    <col width="150">
+		    <col width="200">
+		    <col>
+		  </colgroup>
+		  <thead>
+		    <tr>
+		      <th>批次ID</th>
+		      <th>商品名</th>
+		      <th>库存量</th>
+		      <th>入库公司名</th>
+		      <th>入库时间</th>
+		      <th>出库公司名</th>
+		      <th>出库时间</th>
+		      <!--<th>修改</th>-->
+		      <!--<th id="delet">刪除</th>-->
+		    </tr> 
+		  </thead>
+		  <tbody id="tableroot">
+			
+		  </tbody>
+		</table>
+	</body>
+	<script type="text/javascript">
+		window.onload=function showmsg(){
+			Storagemsg();
+		}
+		function onclicksearch(){
+			$.each(document.querySelectorAll("td"), function(index,ele) {
+			ele.setAttribute('style','display: none;')
+			});
+			search(document.getElementById("searchpd").value);
+		}
+
+	</script>
+</html>

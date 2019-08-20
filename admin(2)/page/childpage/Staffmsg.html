@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../../js/adress.js" ></script>
+		<script type="text/javascript" src="../../layui/layui.js"></script>
+		<script src="../../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/childpage/Staffmsg.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layui/layer.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/modules/layer/default/layer.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/staffmsg.css"/>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	
+		<button class="layui-btn-primary layui-btn" onclick="onaddstaff()">添加职员</button>
+		<button class="layui-btn-danger layui-btn" onclick="onclickstaff()" id="deletbtn">删除职员</button>
+		<button class="layui-btn com-btn" onclick="comfirdelet()" id="deletcomfir">确认删除</button>
+		<table class="layui-table">
+		  <colgroup>
+		    <col width="150">
+		    <col width="200">
+		    <col>
+		  </colgroup>
+		  <thead>
+		    <tr>
+		      <th>姓名</th>
+		      <th>联系方式</th>
+		      <th>公司ID</th>
+		      <th>照片</th>
+		      <th>注册时间</th>
+		      <th>职位</th>
+		      <th>员工ID</th>
+		      <th>离职时间</th>
+		      <th>修改</th>
+		      <th id="delet">刪除</th>
+		    </tr> 
+		  </thead>
+		  <tbody id="tableroot">
+			
+		  </tbody>
+		</table>
+	</body>
+	<script type="text/javascript">
+		$('#delet').hide();
+		$("#deletcomfir").hide()
+		
+		
+window.onload=function(){
+	staffmsg()
+	
+}
+//		$("#tdhide0").hide();
+function onclickstaff(){
+	$("#delet").show();
+	$("#deletbtn").hide()
+	$("#deletcomfir").show();
+	var gettd=	document.querySelectorAll("td.display-none")
+	$.each(gettd,function(index,ele){
+		ele.setAttribute("class","display-block")
+	})
+}
+	</script>
+</html>
+<!--<input type="checkbox" name="like[dai]" title="发呆">-->

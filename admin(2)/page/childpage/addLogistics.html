@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<script src="../../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/add.css"/>
+	<script src="../../layui/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/adress.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/childpage/addLogistics.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="../../layui/css/modules/layer/default/layer.css"/>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<form id="form_staff" action="" method='post' enctype="multipart/form-data"><!--文件上传必须加enctype -->
+                                                                         
+			<div class="layui-form-item">
+			<span><label>公司名</label><input type="text" id="companyName" value="" required="required" /></span><br />
+			<span><label>司机名</label><input type="text" id="name" value="" required="required" /></span><br />
+			<span><label>目的公司名</label><input type="text" name="type" id="nextCompanyName" value="" required="required"/></span><br />
+  			<span><label>批次号</label><input type="text" name="type" id="amount" value="" required="required"/></span><br />
+  			<span><label>车牌号</label><input type="text" name="type" id="plateNum" value="" required="required"/></span><br />
+			</div>
+		      <button class="layui-btn layui-btn-lg" onclick="onclickadd()">立即提交</button>
+		</form>
+	</body>
+	<script type="text/javascript">
+		    
+		function onclickadd() {	
+//			alert("ssssssss");
+//			var formobj =  document.getElementById("form_staff");
+//			var formdata = formobj.getFormData()
+////			var formdata=new FormData();
+//			var fileobj=document.getElementById("photo").files[0];
+//			formdata.append('photo',fileobj);
+//			formdata.append('name', document.getElementById('name').value);
+//			formdata.append('tel', document.getElementById('tel').value);
+//			formdata.append('type', document.getElementById('type').value);
+			var companyName=document.getElementById('companyName').value
+			var nextCompanyName=document.getElementById('nextCompanyName').value
+			var name=document.getElementById('name').value
+			var amount=document.getElementById('amount').value
+			var plateNum=document.getElementById('plateNum').value
+			
+			addlogisticsmsg(companyName,nextCompanyName,name,amount,plateNum);
+//			closewindow();
+		}
+		</script>
+</html>

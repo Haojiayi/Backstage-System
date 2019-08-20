@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+		<script src="../../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layui/layer.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/modules/layer/default/layer.css"/>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		layui.use('layer',function(){
+    var layer=layui.layer;
+    layer.open({
+        type:1,
+        content:'测试',
+        btn:['按钮一','按钮二','按钮三'],
+        yes:function(index,layero)
+        {
+            //index为当前层索引
+            //layero 为 弹出层对象
+            //在回调函数末尾添加 “return false”可以禁止点击该按钮关闭弹出层
+            return false;
+        },
+            btn2:function(index,layero){//按钮二回到
+            return false;
+        },
+        btn3:function(index,layero){//按钮三回调
+            return false;
+        },
+        cancel:function(){//右上角关闭毁回调
+            //return false;
+        }
+    })
+})
+	</script>
+</html>

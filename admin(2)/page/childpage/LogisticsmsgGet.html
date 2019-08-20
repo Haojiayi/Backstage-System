@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../../js/adress.js" ></script>
+		<script type="text/javascript" src="../../layui/layui.js"></script>
+		<script src="../../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/childpage/LogisticsmsgGet.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layui/layer.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/modules/layer/default/layer.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/staffmsg.css"/>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	
+		<button class="layui-btn-primary layui-btn" onclick="addmsg()">添加物流</button>
+		<button class="layui-btn-primary layui-btn" onclick="onapprove()">审批</button>
+		<!--<button class="layui-btn-danger layui-btn" onclick="onclickstaff()" id="deletbtn">删除职员</button>-->
+		<!--<input type="search" class="layui-input-block" placeholder="请输入您要查找的商品" id="searchpd" />--> 
+		<!--<button class="layui-btn layui-btn-radius" onclick="onclicksearch()">提交</button>-->
+		<!--<button class="layui-btn com-btn" onclick="comfirdelet()" id="deletcomfir">确认删除</button>-->
+		<table class="layui-table">
+		  <colgroup>
+		    <col width="150">
+		    <col width="200">
+		    <col>
+		  </colgroup>
+		  <thead>
+		    <tr>
+		      <th>ID</th>
+		      <th>商品名</th>
+		      <th>出发地</th>
+		      <th>目的地 </th>
+		      <th>车牌号</th>
+		      <th>司机名</th>
+		      <th>物流时间</th>
+		      <th>物流状态</th>
+		      <th id="approve">审批</th>
+		      <!--<th>修改</th>-->
+		      <!--<th id="delet">刪除</th>-->
+<!--'id','amount','startPlace','endPlace',
+'plateNum','diverId','time');		      	-->
+		    </tr> 
+		  </thead>
+		  <tbody id="tableroot">
+			
+		  </tbody>
+		</table>
+		<div class="page">
+			<button class="layui-btn layui-btn-xs  layui-btn-primary"><a onclick="firstpage()">首页</a></button>
+			<button class="layui-btn layui-btn-xs  layui-btn-primary"><a onclick="frontpage()">上一页</a></button>
+			<button class="layui-btn layui-btn-xs  layui-btn-primary"><a onclick="afterpage()">下一页</a></button>
+			<input type="number" id="jump"/>
+			<button class="layui-btn layui-btn-xs  layui-btn-primary"><a onclick="jump()">跳转</a></button>
+			<button class="layui-btn layui-btn-xs  layui-btn-primary"><a onclick="lastpage()">末页</a></button>
+			<font>　页数：<font id="nowcount"></font >/<span id="pagecount"></span ></font>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function showmsg(){
+			showlogistics();
+		}
+		function onapprove(){
+			$('#approve').show();
+			$('#approvebtn').hide();
+			var gettd=	document.querySelectorAll("td.display-none")
+			$.each(gettd,function(index,ele){
+				ele.setAttribute("class","display-block")
+			})
+		}
+		
+
+	</script>
+</html>
+
+
+
+
+
+			
+		

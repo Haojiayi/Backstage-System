@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/adress.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layui/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/childpage/ManifestmsgGet.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/modules/layer/default/layer.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/ManifestmsgGet.css" />
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		订单管理
+		<button class="layui-btn-primary layui-btn" onclick="onadd()">添加订单</button>
+		<button class="layui-btn layui-btn-lg" onclick="onapprove()" id="approvebtn">审批</button>
+
+		<table class="layui-table" id="gettable">
+		  <colgroup>
+		    <col width="150">
+		    <col width="200">
+		    <col>
+		  </colgroup>
+		  <thead>
+		    <tr>
+		      <th>订单ID</th>
+		      <th>目标商品</th>
+		      <th>数量</th>
+		      <th>目标公司</th>
+		      <th>操作员ID</th>
+		      <th>操作员</th>
+		      <th>订单生成时间</th>
+		      <th>订单状态</th>
+		      <th id="approve">审批</th>
+		    </tr> 
+		  </thead>
+		  <tbody id="tableroot">
+			
+		  </tbody>
+		</table>
+	</body>
+	<script type="text/javascript">
+		$('#approve').hide();
+		window.onload=function show(){
+			manifestmsg();
+		}
+		
+		function onapprove(){
+			$('#approve').show();
+			$('#approvebtn').hide();
+			var gettd=	document.querySelectorAll("td.display-none")
+			$.each(gettd,function(index,ele){
+				ele.setAttribute("class","display-block")
+			})
+		}
+		
+
+	</script>
+</html>

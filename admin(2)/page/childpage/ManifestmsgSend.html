@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../../js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/adress.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../layui/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/childpage/ManifestmsgSend.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../layui/css/modules/layer/default/layer.css"/>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		订单管理
+		<button class="layui-btn-primary layui-btn" onclick="onadd()">添加订单</button>
+		<button class="layui-btn-danger layui-btn" onclick="ondetele()" id="handlerbtn">处理订单</button>
+		<button class="layui-btn com-btn" onclick="comfirdelet()" id="handlercomfir">确认处理</button>
+		<table class="layui-table">
+		  <colgroup>
+		    <col width="150">
+		    <col width="200">
+		    <col>
+		  </colgroup>
+		  <thead>
+		    <tr>
+		      <th>订单ID</th>
+		      <th>目标商品</th>
+		      <th>数量</th>
+		      <th>目标公司</th>
+		      <th>操作员ID</th>
+		      <th>操作员</th>
+		      <th>订单生成时间</th>
+		      <th>订单状态</th>
+		      <th id="delet">刪除</th>
+		    </tr> 
+		  </thead>
+		  <tbody id="tableroot">
+			
+		  </tbody>
+		</table>
+	</body>
+	<script type="text/javascript">
+		$('#handlerbtn').hide();
+		$('#delet').hide();
+		$("#handlercomfir").hide()
+		window.onload=function show(){
+			manifestmsg();
+		}
+		function onadd(){
+			onaddmanifest()
+		}
+		function ondelet(){
+			$("#delet").show();
+			$("#deletbtn").hide()
+			$("#deletcomfir").show();
+			var gettd=	document.querySelectorAll("td.display-none")
+			$.each(gettd,function(index,ele){
+				ele.setAttribute("class","display-block")
+			})
+		}
+		function comfirdelet(){}
+	</script>
+</html>

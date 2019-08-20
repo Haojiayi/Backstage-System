@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>农产品溯源管理系统</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+   <link rel="stylesheet" type="text/css" href="../layui/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+</head>
+
+<body>
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">溯源后台管理系统</div>
+            <!-- 头部区域 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;" >
+                        <img src="../image/user.png" class="layui-nav-img">
+                        <span id="img">未登录</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="javascript:;">安全设置</a></dd>
+                    </dl>
+                </li>
+                
+                <li class="layui-nav-item"><a href="login.html">注销</a></li>
+            </ul>
+        </div>
+
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
+                    <li class="layui-nav-item layui-this"><a href="javascript:;" data-options="{'id':'0','title':'首页','icon':'fa-home','url':''}"><i class="fa fa-home"></i>首页</a></li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">公共基础</a>
+                        <dl class="layui-nav-child">
+                            <!--<dd id='companymsg'><a href="javascript:;" data-url="childpage/Companymsg.html" data-id="2001">公司信息*</a></dd>-->
+                            <dd id="staffmsg"><a href="javascript:;" data-url="childpage/Staffmsg.html" data-id="2002">员工信息*</a></dd>
+                            <dd id="deportmsg"><a href="javascript:;" data-url="childpage/Deportmsg.html" data-id="2003">仓库信息*</a></dd>
+                            <dd id="commmsg"><a href="javascript:;" data-url="childpage/Commmsg.html" data-id="2004">商品信息*</a></dd>
+                            <!--<dd ><a id="personal" href="javascript:;" data-url="childpager/Personal.html" data-id="2004">基本资料</a></dd>-->
+                        </dl>
+                    </li>
+                      <li class="layui-nav-item " id="shop">
+                        <a class="" id="deportcontroll" href="javascript:;">仓库管理*</a>
+                        <dl class="layui-nav-child">
+                           <dd><a href="javascript:;" data-url="childpage/Storagemsg.html" data-id="4001" id="shop">仓储产品</a></dd>
+                           <!--<dd><a href="javascript:;" data-url="childpage/batches.html" data-id="4002">商品批次*</a></dd>-->
+                           <!--<dd><a href="javascript:;" data-url="childpage/Authentication.html" data-id="4003">认证信息</a></dd>-->
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item " id="materials">
+                        <a class="" href="javascript:;">订单管理</a>
+                        <dl class="layui-nav-child">
+                           <dd id="manifest"><a href="javascript:;" data-url="childpage/ManifestmsgSend.html" data-id="5001">订单管理(发出)*</a></dd>
+                           <dd id="manifest"><a href="javascript:;" data-url="childpage/ManifestmsgGet.html" data-id="5001">订单管理(接收)*</a></dd>
+                           <dd id="Batch"><a href="javascript:;" data-url="childpage/Batchmsg.html" data-id="5002">自家商品批次</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item " id="logistics">
+                        <a class="" href="javascript:;">物流管理</a>
+                        <dl class="layui-nav-child">
+                           <dd id="log"><a href="javascript:;" data-url="childpage/LogisticsmsgSend.html" data-id="3001">物流信息(发出)</a></dd>
+                           <dd id="mylog"><a href="javascript:;" data-url="childpage/LogisticsmsgGet.html" data-id="3001">物流信息(接收)</a></dd>
+                        </dl>
+                    </li>
+                     <li class="layui-nav-item " id="myshop">
+                        <!--<a class="" href="javascript:;">系统管理</a>-->
+                        <dl class="layui-nav-child">
+                           <dd><a href="javascript:;" data-url="childpager/myshop.html" data-id="6001" id="shop">自家商品信息</a></dd>
+                           <dd><a href="javascript:;" data-url="childpager/mybatches.html" data-id="6002">自家商品批次</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 内容主体区域 -->
+        <div class="layui-body">
+            <!-- 顶部切换卡 -->
+            <div class="layui-tab " lay-filter="main-tab" lay-allowclose="true">
+                <div class="layui-tab-tool open" title="收起">
+                    <i class="fa fa-chevron-left"></i>
+                </div>
+                <ul class="layui-tab-title" style="z-index: 999;">
+                    <li lay-id="0" class="layui-this"><i class="fa fa-home"></i>首页</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <iframe id="0" src="childpage/Deckstop.html" class="layui-tab-iframe"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部固定区域 -->
+         <div class="layui-footer">
+                     底部固定区域
+        </div> 
+    </div>
+       <script src="../layui/layui.all.js"></script>
+       <script src="../js/main.all.js"></script>
+       <script src="../js/index.js"></script>
+</body>
+<script type="text/javascript">
+window.onload=function(){
+				Limst()
+				var name=localStorage.getItem('username')
+				document.getElementById('img').innerHTML=name
+				
+}
+</script>
+</html>

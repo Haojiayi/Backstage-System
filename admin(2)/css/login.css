@@ -1,0 +1,44 @@
+body{background: url(../image/bg.jpg);background-repeat: repeat;}
+.login{
+ height: 70%;width: 55% ;
+ margin-left: 25% ;
+ border: black 1px solid;
+ margin-top: -5%;}
+.top{width: 100%;height: 100%;}
+form{
+	padding-left: 20%;padding-bottom: 5%;
+}
+.login h1{
+	font-family: "微软雅黑";
+	margin-left: 10%;
+	font-size: 50px;
+}
+.login h4{
+	font-family:"宋体";
+	margin-left: 10%;
+	font-size: 30px;
+}
+.login  p{
+	font-family: "script mt bold";
+	line-height: 2px;
+}
+.login table{margin-left: 10%;}
+.login td input{
+	margin: 10%;
+	margin-left: 20%;
+	width: 100%;
+	height: 100%;
+	border-radius: 5%;
+	background:none;
+}
+td span{
+	font-size: 10px;
+}
+.btstyle{
+	margin: 10%;
+	border: #000000  1px solid;
+	
+	width: 50%;
+	height: 40px;
+	background:none;
+}
